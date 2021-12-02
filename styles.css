@@ -61,8 +61,8 @@ li {
 }
 li a {
   text-decoration: none;
-  color: #707070;
-  font-size: 1.5rem;
+  color: var(--primary-black-color);
+  font-size: 18px;
   text-align: right;
   padding: 14px 16px;
   margin-bottom: 1rem;
@@ -166,6 +166,7 @@ li a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-bottom: 10rem;
 }
 .container-secondary-grey {
   background-color: #F7F7F7;
@@ -226,6 +227,48 @@ li a {
   color: var(--secondary-black-color);
   margin: 1.5rem auto;
 }
+.appointment-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem;
+}
+.container-secondary-blue {
+  background-color: var(--primary-blue-color);
+  /* position: absolute; */
+}
+.container-opacity-white {
+  background-color: transparent #DEDEDE;
+  opacity: 80%;
+  
+}
+.appointment-text h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+}
+.btn-secondary {
+  background-color: #fff;
+  color: var(--primary-blue-color);
+}
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.8rem;
+}
+.container-primary-blue {
+  background-color: var(--primary-blue-color);
+}
+.footer-text {
+  color: #fff;
+  opacity: 60%;
+}
+
 .topMenu-icons img:hover {
   cursor: pointer;
   fill: var(--primary-green-color);
@@ -238,23 +281,28 @@ li a {
   cursor: pointer;
   background-color: var(--primary-blue-color);
 }
+.btn-secondary:hover {
+  cursor: pointer;
+  background-color: var(--primary-blue-color);
+  color: #fff;
+}
 
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
 
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
 }
-@media (min-width: 992px) {
+@media (max-width: 992px) {
 
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
 
 }
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
 
 }
-@media (min-width: 1920px) {
+@media (max-width: 1920px) {
 
 }
