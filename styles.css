@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, li {
 .drop-nav li {
   display: inline-block;
 }
-.drop-nav li ul {
+.dropNav-links {
   position: absolute;
   width: auto;
   display: none;
@@ -343,12 +343,7 @@ h1, h2, h3, h4, h5, li {
   }
 }
 @media (max-width: 768px) {
-  .topMenu-container {
-    justify-content: center;
-  }
-  .topMenu-icons {
-    display: none;
-  }
+
 }
 @media (max-width: 844px) {
   .drop-nav li:hover ul {
@@ -369,6 +364,16 @@ h1, h2, h3, h4, h5, li {
   }
   .drop-nav a {
     color: #fff;
+  }
+  .dropNav-links li {
+    border-bottom: none;
+    border-top: none;
+  }  
+  .topMenu-container {
+    justify-content: center;
+  }
+  .topMenu-icons {
+    display: none;
   }
 }
 @media (min-width: 845px) {
@@ -394,8 +399,9 @@ h1, h2, h3, h4, h5, li {
     border-top: 2px solid var(--primary-green-color);
     transform: scale(1.05);
   }
-}
-@media (min-width: 992px) {
+  .dropNav-links {
+    right: 0;
+  }  
   .footer-icons {
     display: none;
   }
@@ -403,9 +409,13 @@ h1, h2, h3, h4, h5, li {
     justify-content: center;
   }
 }
+@media (min-width: 992px) {
+
+}
 @media (max-width: 992px) {
   .topMenu-icons {
     transform: scale(1.5);
+    margin-right: 5%;
   }
   .showcase-placeholder {
     display: none;
