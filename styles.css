@@ -1,4 +1,5 @@
-* {
+*, *::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -42,6 +43,7 @@ h1, h2, h3, h4, h5, li {
 .topMenu-icons i {
   color: var(--primary-blue-color);
   margin: 0 .8rem;
+  transition: 0.3s ease-in-out;
 }
 .topMenu-border {
   margin-top: 1rem;
@@ -54,24 +56,42 @@ h1, h2, h3, h4, h5, li {
   justify-content: space-between;
   align-items: center;
 }
-ul {
+.nav-links {
   list-style-type: none;
 }
-li {
-  margin-bottom: 1rem;
+.nav-links li {
   display: inline;
 }
-li a {
+.drop-nav a {
   text-decoration: none;
   color: var(--primary-black-color);
   font-size: 18px;
-  text-align: right;
   padding: 14px 16px;
-  margin-bottom: 1rem;
 }
-.mainMenu-container i {
-  transform: scale(2.5);
-  color: var(--primary-black-color);
+.drop-nav {
+  display: inline;
+  align-content: flex-end;
+}
+.drop-nav li {
+  display: inline-block;
+}
+.drop-nav li ul {
+  position: absolute;
+  width: auto;
+  display: none;
+  background-color: var(--primary-green-color);
+  border-radius: 8px 0 8px 8px;
+  right: 10%;
+}
+.drop-nav li ul li {
+  display: block;
+}
+.drop-nav li ul li a {
+  display: block !important;
+}
+.dropNav-links li {
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
 }
 .container-primary-grey {
   background-color: #DEDEDE;
@@ -116,14 +136,19 @@ li a {
   margin: 40px 0 0 0;
   background-color: var(--primary-green-color);
   color: #fff;
+  transition: 0.4s ease-in-out;
 }
 .btn-nav {
   padding: 1rem 1.5rem;
-  border: 2px solid var(--primary-blue-color);
+  border: none;
   border-radius: 8px;
 }
+.btn-nav i {
+  color: #fff;
+  transform: scale(2.5);
+}
 .btn-blue {
-  background-color: #fff;
+  background-color: var(--primary-blue-color);
 }
 .aboutUs-container {
   display: flex;
@@ -221,6 +246,7 @@ li a {
   width: 120px;
   border-radius: 50%;
   margin: 4rem auto;
+  transition: 0.4s ease-in-out;
 }
 .cardImg-bgr img {
   margin-top: 30px;
@@ -261,6 +287,7 @@ li a {
 .btn-secondary {
   background-color: #fff;
   color: var(--primary-blue-color);
+  transition: 0.25s ease-in-out;
 }
 .footer-container {
   display: flex;
@@ -289,7 +316,8 @@ li a {
 }
 .btn-blue:hover {
   cursor: pointer;
-  background-color: var(--primary-blue-color);
+  background-color: var(--primary-green-color);
+  border-radius: 8px 8px 0 0;
 }
 .btn-primary:hover {
   cursor: pointer;
@@ -304,6 +332,7 @@ li a {
   background-color: var(--primary-blue-color);
   color: #fff;
 }
+
 
 @media (max-width: 576px) {
   .appointment-text {
@@ -321,17 +350,49 @@ li a {
     display: none;
   }
 }
-@media (max-width: 850px) {
-  .nav-links {
-    display: none;
+@media (max-width: 844px) {
+  .drop-nav li:hover ul {
+    display: block;
+  }
+  .dropNav-links li:hover {
+    background-color: var(--primary-blue-color);
+  }
+  .dropNav-links li:hover:first-child {
+    border-radius: 8px 0 0 0;
+  }
+  .dropNav-links li:hover:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+  .drop-nav:hover .btn-nav {
+    background-color: var(--primary-green-color) !important;
+    border-radius: 8px 8px 0 0;
+  }
+  .drop-nav a {
+    color: #fff;
   }
 }
-@media (min-width: 851px) {
+@media (min-width: 845px) {
   .mainMenu-container i {
     display: none;
   }
   .mainMenu-container button {
     display: none;
+  }
+  .dropNav-links {
+    display: block;
+  }
+  .drop-nav li ul {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .drop-nav li ul li {
+    background-color: #fff;
+  }
+  .dropNav-links li:hover {
+    border-bottom: 2px solid var(--primary-green-color);
+    border-top: 2px solid var(--primary-green-color);
+    transform: scale(1.05);
   }
 }
 @media (min-width: 992px) {
